@@ -22,7 +22,7 @@
   async: 20
   poll: 0
   when:
-    - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
+    - "(ipv4rules.changed or ipv6rules.changed)"
   tags:
     - iptables
 
