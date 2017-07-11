@@ -13,14 +13,14 @@
   tags: [ 'iptables' ]
 
 - name: Reload Iptables rules (Debian Family)
-  service: name=netfilter-persistent state=restarted
+  service: name=netfilter-persistent state=restarted use=auto
   when:
     - ansible_os_family == 'Debian'
     - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
   tags: [ 'iptables' ]
 
 - name: Reload Iptables rules (RedHat Family)
-  service: name=iptables state=restarted
+  service: name=iptables state=restarted use=auto
   when:
     - ansible_os_family == 'RedHat'
     - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
