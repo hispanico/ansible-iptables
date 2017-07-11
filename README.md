@@ -139,7 +139,7 @@ ip6tables_rules_path: "{{ iptables_confdir }}/ip6tables"  # Path to rule file
 Dependencies
 ------------
 
-None
+None.
 
 Example Playbook
 ----------------
