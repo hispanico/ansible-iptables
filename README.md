@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Install and configures iptables for IPv4 and IPv6
+Install and configures iptables for IPv4 and IPv6.
 
 Requirements
 ------------
