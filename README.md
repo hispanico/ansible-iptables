@@ -1,5 +1,7 @@
-Role Name
+ansible-iptables
 =========
+[![Build Status](https://img.shields.io/travis/hispanico/ansible-iptables.svg?style=flat-square)](https://travis-ci.org/hispanico/ansible-iptables)
+[![Galaxy](https://img.shields.io/badge/galaxy-hispanico.iptables-blue.svg?style=flat-square)](https://galaxy.ansible.com/hispanico/iptables/)
 
 Install and configures iptables for IPv4 and IPv6.
 
