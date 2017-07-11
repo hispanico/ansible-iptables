@@ -174,7 +174,7 @@ Example Playbook
 License
 -------
 
-Licensed under the GPLv3 License. See the LICENSE file for details
+Licensed under the GPLv3 License. See the LICENSE file for details.
 
 Author Information
 ------------------
