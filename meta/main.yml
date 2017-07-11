@@ -10,7 +10,7 @@ galaxy_info:
     versions:
     - trusty
     - xenial
-  - name: Debina
+  - name: Debian
     versions:
     - jessie
   - name: EL
