@@ -1,0 +1,5 @@
+---
+
+- name: Prepare ip6tables rules
+  template: dest={{ip6tables_rules_path}} src=rules.v6.j2 owner=root group=root mode=0644
+  register: ipv6rules

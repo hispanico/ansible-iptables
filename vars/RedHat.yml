@@ -1,0 +1,7 @@
+---
+
+iptables_confdir: /etc/sysconfig
+
+iptables_rules_path: "{{ iptables_confdir }}/iptables"  # Path to rule file
+
+ip6tables_rules_path: "{{ iptables_confdir }}/ip6tables"  # Path to rule file

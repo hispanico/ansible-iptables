@@ -1,0 +1,5 @@
+---
+
+- name: Prepare iptables rules
+  template: dest={{iptables_rules_path}} src=rules.v4.j2 owner=root group=root mode=0644
+  register: ipv4rules

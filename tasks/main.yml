@@ -1,0 +1,27 @@
+---
+
+- include: common_iptables.yml
+  when: iptables_enabled or ip6tables_enabled
+  tags: [ 'iptables' ]
+
+- include: iptables.yml
+  when: iptables_enabled
+  tags: [ 'iptables' ]
+
+- include: ip6tables.yml
+  when: ip6tables_enabled
+  tags: [ 'iptables' ]
+
+- name: Reload Iptables rules (Debian Family)
+  service: name=netfilter-persistent state=restarted
+  when:
+    - ansible_os_family == 'Debian'
+    - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
+  tags: [ 'iptables' ]
+
+- name: Reload Iptables rules (RedHat Family)
+  service: name=iptables state=restarted
+  when:
+    - ansible_os_family == 'RedHat'
+    - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
+  tags: [ 'iptables' ]
