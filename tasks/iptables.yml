@@ -3,7 +3,7 @@
 - name: Prepare iptables rules
   template:
     src: rules.v4.j2
-    dest: {{iptables_rules_path}}
+    dest: "{{iptables_rules_path}}"
     owner: root
     group: root
     mode: 0600

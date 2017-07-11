@@ -3,7 +3,7 @@
 - name: Prepare ip6tables rules
   template:
     src: rules.v6.j2
-    dest: {{ip6tables_rules_path}}
+    dest: "{{ip6tables_rules_path}}"
     owner: root
     group: root
     mode: 0600
