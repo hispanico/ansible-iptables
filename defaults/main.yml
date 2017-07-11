@@ -60,6 +60,8 @@ iptables_raw_rules: []                  # List of custom raw table rules
 ip6tables_enabled: yes                  # The role is enabled
 ip6tables_logging: yes                  # Log dropped packets
 
+ip6tables_deny_all : yes                 # Deny all except allowed
+
 ## Filter Table ##
 ip6tables_allowed_sources: []           # List of allowed source
 
