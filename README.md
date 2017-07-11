@@ -144,6 +144,7 @@ None
 Example Playbook
 ----------------
 
+```yaml
   - hosts: all
     roles:
       - ansible-iptables
@@ -168,6 +169,7 @@ Example Playbook
         - -A INPUT -p icmpv6 -j ACCEPT
         - -A OUTPUT -p udp --dport 123 -j ACCEPT
         - -A INPUT -p udp --sport 123 -j ACCEPT
+```
 
 License
 -------
