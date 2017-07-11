@@ -2,26 +2,37 @@
 
 - include: common_iptables.yml
   when: iptables_enabled or ip6tables_enabled
-  tags: [ 'iptables' ]
+  tags:
+    - iptables
 
 - include: iptables.yml
   when: iptables_enabled
-  tags: [ 'iptables' ]
+  tags:
+    - iptables
 
 - include: ip6tables.yml
   when: ip6tables_enabled
-  tags: [ 'iptables' ]
+  tags:
+    - iptables
 
-- name: Reload Iptables rules (Debian Family)
-  service: name=iptables-persistent state=restarted
+- name: Restart Iptables rules
+  service:
+    name: "{{ iptables_service_name }}"
+    state: restarted
+  async: 20
+  poll: 0
   when:
-    - ansible_os_family == 'Debian'
     - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
-  tags: [ 'iptables' ]
+  tags:
+    - iptables
 
-- name: Reload Iptables rules (RedHat Family)
-  service: name=iptables state=restarted
-  when:
-    - ansible_os_family == 'RedHat'
-    - ({{ ipv4rules.changed }} or {{ ipv6rules.changed }})
-  tags: [ 'iptables' ]
+- name: Ensure iptables is started and enabled on boot
+  service:
+    name: "{{ iptables_service_name }}"
+    state: started
+    enabled: yes
+  async: 20
+  poll: 0
+  changed_when: False
+  tags:
+    - iptables

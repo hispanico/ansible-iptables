@@ -1,0 +1,4 @@
+---
+# vars file for iptables (Debian jessie specific)
+
+iptables_service_name: netfilter-persistent

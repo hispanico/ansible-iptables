@@ -1,27 +1,20 @@
 ---
 
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
 
-- name: Ensure iptables is installed (Debian Family)
-  apt:
-    name: "{{ item }}"
-    state: present
-    update_cache: yes
-    cache_valid_time: 86400
-  with_items:
-    - iptables
-    - iptables-persistent
-  when: ansible_os_family == 'Debian'
+- name: Include release specific variables
+  include_vars: "{{ ansible_distribution_release }}.yml"
+  when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
-- name: Ensure iptables is installed (RedHat Family)
-  yum:
-    name: "{{item}}"
-    state: present
-  with_items:
-    - iptables
-    - iptables-ipv6
-  when: ansible_os_family == 'RedHat'
+- include: CentOS.yml
+  when: ansible_distribution == "CentOS"
+
+- include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- include: Debian.yml
+  when: ansible_distribution == "Debian"
 
 - name: Ensure that config directory is exists
   file: state=directory path="{{ iptables_confdir }}"

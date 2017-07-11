@@ -1,5 +1,5 @@
 ---
-# vars file for iptables (Debian specific)
+# vars file for iptables (Ubuntu specific)
 
 iptables_packages:
   - iptables
