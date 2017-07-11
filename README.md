@@ -160,7 +160,7 @@ Example Playbook
         - -A OUTPUT -p udp --dport 123 -j ACCEPT
         - -A INPUT -p udp --sport 123 -j ACCEPT
       ip6tables_allowed_sources:
-        - '2001:222:4562::/48'
+        - '2001:555:11::/48'
       ip6tables_allowed_tcp_ports:
         - 22
         - 80
