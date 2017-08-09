@@ -14,25 +14,3 @@
   when: ip6tables_enabled
   tags:
     - iptables
-
-- name: Restart Iptables rules
-  service:
-    name: "{{ iptables_service_name }}"
-    state: restarted
-  async: 20
-  poll: 0
-  when:
-    - "(ipv4rules.changed or ipv6rules.changed)"
-  tags:
-    - iptables
-
-- name: Ensure iptables is started and enabled on boot
-  service:
-    name: "{{ iptables_service_name }}"
-    state: started
-    enabled: yes
-  async: 20
-  poll: 0
-  changed_when: False
-  tags:
-    - iptables

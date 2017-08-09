@@ -1,0 +1,16 @@
+---
+
+- name: Enable and Start Iptables
+  service:
+    name: "{{ iptables_service_name }}"
+    state: started
+    enabled: yes
+  tags:
+    - iptables
+
+- name: Restart Iptables Rules
+  service:
+    name: "{{ iptables_service_name }}"
+    state: restarted
+  tags:
+    - iptables

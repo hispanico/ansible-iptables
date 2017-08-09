@@ -8,3 +8,5 @@
     group: root
     mode: 0600
   register: ipv4rules
+  notify:
+    - Restart Iptables Rules
