@@ -8,7 +8,7 @@
   tags:
     - iptables
 
-- name: Reload Iptables Rules
+- name: Restart Iptables
   service:
     name: "{{ iptables_service_name }}"
     state: restarted

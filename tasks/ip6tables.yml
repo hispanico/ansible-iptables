@@ -9,4 +9,4 @@
     mode: 0600
   register: ipv6rules
   notify:
-    - Reload Iptables Rules
+    - Restart Iptables
