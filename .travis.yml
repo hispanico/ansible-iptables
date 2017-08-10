@@ -36,8 +36,8 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Check for role is done
-  - sudo iptables -L -n | grep tcp
-  - sudo ip6tables -L -n |grep tcp
+  - sudo iptables -L -nv
+  - sudo ip6tables -L -nv
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
