@@ -8,7 +8,7 @@ Install and configures iptables for IPv4 and IPv6.
 Requirements
 ------------
 
-This role requires Ansible 1.9 or higher.
+This role requires Ansible 2.4 or higher.
 
 Role Variables
 --------------

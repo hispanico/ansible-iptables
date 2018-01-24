@@ -1,16 +1,16 @@
 ---
 
-- include: common_iptables.yml
+- include_tasks: common_iptables.yml
   when: iptables_enabled or ip6tables_enabled
   tags:
     - iptables
 
-- include: iptables.yml
+- include_tasks: iptables.yml
   when: iptables_enabled
   tags:
     - iptables
 
-- include: ip6tables.yml
+- include_tasks: ip6tables.yml
   when: ip6tables_enabled
   tags:
     - iptables
