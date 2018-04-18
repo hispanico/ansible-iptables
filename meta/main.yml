@@ -3,7 +3,7 @@ galaxy_info:
   description: Manage IPv4 and IPv6 iptables rules
   license: GPLv3
 
-  min_ansible_version: 1.2
+  min_ansible_version: 2.4
 
   platforms:
   - name: Ubuntu
